@@ -1,1 +1,1 @@
-# myStudy
+# myStudyOfC++
