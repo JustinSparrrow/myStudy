@@ -16,4 +16,4 @@ public:
     };
 };
 
-//更快捷的方法：https://blog.csdn.net/qq_74688865/article/details/132751645
+//题解：https://blog.csdn.net/qq_74688865/article/details/132751645
