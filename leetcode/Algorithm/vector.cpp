@@ -14,7 +14,7 @@ int main(){
         vec.push_back(t);   //将值传入进数组之中
     }
 
-    sort(vec.begin(), vec.end());   //调用sort()方法进行排序，从小到大排序
+    sort(vec.begin(), vec.end());   //调用so rt()方法进行排序，从小到大排序
 
     vector<int>::iterator it;   //对vector创建一个指向它的迭代器
     //迭代器循环遍历数组
@@ -57,7 +57,21 @@ int main(){
         cout << vec.back() << endl; //返回第二个元素
     }
 
+    //查找
+    auto m = lower_bound(vec.begin(), vec.end(), 3);    //找到一个大于等于3的数，返回它的指针。找不到返回end()指针
+    cout << *m << endl;
+    int p = lower_bound(vec.begin(), vec.end(), 3) - vec.begin();   //返回在vec容器内的下标，如果没有找到会返回数组长度
+    cout << p << endl;
+
     vec.pop_back(); //删除末尾元素
+
+    //去重
+    //unique()函数会去除连续相同的元素，例77788777，只会删减成787，并将重复元素堆积至数组末尾。所以一般使用前先对容器进行排序，使用unique方法后再对后面进行删除
+    sort(vec.begin(), vec.end());
+//    unique(vec.begin(),vec.end());  //将重复项堆积至数组末尾，返回第一个重复的数字的指针
+    vec.erase(unique(vec.begin(), vec.end()), vec.end());
+
+    //返回下标用求出的指针减去开头的指针，即it - vec.begin()
 
     return 0;
 }
