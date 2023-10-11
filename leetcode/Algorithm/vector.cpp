@@ -73,5 +73,14 @@ int main(){
 
     //返回下标用求出的指针减去开头的指针，即it - vec.begin()
 
+    //插入元素
+    //插入单个元素
+    vec.insert(vec.begin()+1, 10);  //前面是位置，后面是元素
+    //插入多个元素
+    vec.insert(vec.begin(),2,5);    //第一个是位置，第二个是数量，第三个是元素
+    //插入另外一个数组
+    vector<int> vec2;
+    vec.insert(vec.end(),vec2.begin(),vec2.end()); //第一个是插入位置，第二个是要插入的数组的第一个位置，第三个是插入数组的结尾
+
     return 0;
 }
